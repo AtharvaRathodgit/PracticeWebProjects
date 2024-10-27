@@ -3,11 +3,11 @@ let InputTask = document.getElementsByClassName('newTask')[0];
 let addBTN = document.getElementsByClassName('AddBtn')[0];
 let DeleteAllBtn = document.getElementsByClassName('deleteAll')[0];
 
-function addNewTask(){
-    if(InputTask.value === ''){
+function addNewTask() {
+    if (InputTask.value === '') {
         alert("Define New Task");
     }
-    else{
+    else {
         let NewTask = document.createElement('li');
         NewTask.innerHTML = InputTask.value;
         TaskList.appendChild(NewTask);
@@ -24,12 +24,12 @@ function addNewTask(){
 
 addBTN.addEventListener('click', addNewTask);
 
-InputTask.addEventListener('keydown', function(e) {
+InputTask.addEventListener('keydown', function (e) {
     if (e.key === 'Enter') {
-        if(InputTask.value === ''){
+        if (InputTask.value === '') {
             return;
         }
-        else{
+        else {
             addNewTask();
             InputTask.value = '';
             storeData();
@@ -37,33 +37,33 @@ InputTask.addEventListener('keydown', function(e) {
     }
 });
 
-TaskList.addEventListener('click', function(e){
-    if(e.target.tagName === 'LI'){
+TaskList.addEventListener('click', function (e) {
+    if (e.target.tagName === 'LI') {
         e.target.classList.toggle('checkedTask');
         storeData();
     }
-    else if(e.target.tagName === 'IMG'){
+    else if (e.target.tagName === 'IMG') {
         e.target.parentElement.parentElement.remove();
         storeData();
     }
 }, false)
 
-DeleteAllBtn.addEventListener('click', function(e){
+DeleteAllBtn.addEventListener('click', function (e) {
     TaskList.innerHTML = '';
     storeData();
 })
 
 
-function storeData(){
+function storeData() {
     let theData = TaskList.innerHTML;
 
     localStorage.setItem("ListData", theData);
 }
 
-function loadListData(){
+function loadListData() {
     let theData = localStorage.getItem('ListData');
 
-    if(theData){
+    if (theData) {
         TaskList.innerHTML = theData;
     }
 }
