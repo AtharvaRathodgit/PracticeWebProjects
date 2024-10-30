@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Website 2 - Responsive Side Bar</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <input type="checkbox" id="sidebar-state">
+
+        <label for="sidebar-state" class="sidebar-opener">
+
+            <svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960" width="32px" fill="#000000">
+                <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
+            </svg>
+
+        </label>
+
+        <label id="sidebar-overlay-closer" for="sidebar-state"></label>
+
+        <div class="linkContainer">
+
+            <label for="sidebar-state" class="sidebar-closer">
+
+                <svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960" width="32px"
+                    fill="#000000">
+                    <path
+                        d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
+                </svg>
+            </label>
+
+            <a href="#" class="theHome">Home</a>
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Blogs</a>
+            <a href="#">Login</a>
+            <a href="#">Contact</a>
+
+        </div>
+
+    </nav>
+
+    <div class="background">
+        <h1 class="mainHeadline">Welcome to the Website</h1>
+        <p class="mainPara">Try Opening this website in Mobile, to check the Responsiveness of the Side Bar</p>
+    </div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Martel+Sans:wght@200;300;400;600;700;800;900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 12pt;
+    font-family: "Poppins", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.navbar {
+    background-image: linear-gradient(145deg, rgb(48, 48, 48), rgb(22, 22, 22));
+    height: 8vh;
+
+    display: flex;
+    /* flex-direction: row; */
+    justify-content: flex-end;
+    align-items: center;
+
+}
+
+.linkContainer {
+    height: 100%;
+    width: 100%;
+
+    display: flex;
+
+    flex-direction: row;    /*TO BE CONVERTED IN TO 'column' WHEN THE WIDTH OF THE DEVICE GETS SMALLER THAN 600PX*/
+
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.5);
+}
+
+.linkContainer a {
+    height: 100%;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+
+    text-decoration: none;
+    color: white;
+}
+
+.linkContainer a:hover {
+    background-image: linear-gradient(145deg, rgb(255, 123, 75), orangered);
+    text-shadow: 0px 0px 7px rgba(255, 255, 255, 0.6);
+}
+
+.linkContainer .theHome {
+    margin-right: auto;
+}
+
+.navbar svg {
+    fill: white;
+}
+
+#sidebar-state {
+    display: none;
+}
+
+.sidebar-opener,
+.sidebar-closer {
+    display: none;
+}
+
+.background {
+    height: 100vh;
+    width: 100vw;
+    background-image: linear-gradient(145deg, rgb(255, 123, 75), rgb(255, 68, 0));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.mainHeadline,
+.mainPara {
+    text-shadow: 0 0 14px rgba(0, 0, 0, 0.25);
+}
+
+.mainHeadline {
+    font-size: 40px;
+}
+
+.mainPara {
+    font-size: 20px;
+}
+
+@media (max-width: 600px) {
+    .linkContainer {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+
+        position: fixed;
+        top: 0;
+        right: -100%;
+
+        z-index: 10;
+        width: 75vw;
+
+        background-image: linear-gradient(145deg, rgb(48, 48, 48), rgb(22, 22, 22));
+        box-shadow: -5px 0 5px rgba(0, 0, 0, 0.25);
+
+        transition: 0.5s ease-out;
+    }
+
+
+
+    .linkContainer a {
+        box-sizing: border-box;
+        height: auto;
+        width: 100%;
+        padding: 20px 30px;
+        justify-content: flex-start;
+    }
+
+    .sidebar-opener,
+    .sidebar-closer {
+        display: block;
+        margin: 20px;
+
+    }
+
+    .sidebar-opener:hover,
+    .sidebar-closer:hover {
+        filter: drop-shadow(0px 0px 7px rgba(255, 255, 255, 0.7));
+    }
+
+    #sidebar-state:checked~.linkContainer {
+        right: 0;
+    }
+
+    #sidebar-state:checked~#sidebar-overlay-closer {
+        height: 100%;
+        width: 100%;
+
+        position: fixed;
+        top: 0;
+        left: 0;
+
+        z-index: 9;        /*SMALLER THAN THE Z-INDEX OF THE SIDEBAR*/
+    }
+
+    .background {
+        padding: 0 20px;
+        overflow: hidden;
+        width: 100vw;
+        box-sizing: border-box;
+    }
+
+    .mainHeadline {
+        font-size: 30px;
+    }
+
+    .mainPara {
+        font-size: 16px;
+    }
+}
